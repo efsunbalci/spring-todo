@@ -2,7 +2,9 @@ package com.efsun.todoapi.repository;
 
 import com.efsun.todoapi.entity.Todo;
 import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
 
 public interface TodoRepository extends JpaRepository<Todo, Long> {
+    List<Todo> findByTitleContainingIgnoreCase(String title);
 
 }

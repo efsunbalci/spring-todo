@@ -32,6 +32,9 @@ public class TodoService {
         return todoRepository.save(todo);
 
     }
+    public List<Todo> searchTodos(String todoTitle) {
+        return todoRepository.findByTitleContainingIgnoreCase(todoTitle);
+    }
     public Todo getTodoById(Long id) {
 
         return todoRepository.findById(id)
